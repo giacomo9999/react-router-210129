@@ -2,6 +2,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import FruitsList from "./FruitsList";
 import UsersList from "./UsersList";
+import NoMatchPage from "./NoMatchPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/fruits-list" component={FruitsList} />
         <Route path="/users-list" component={UsersList} />
+        <Route component={NoMatchPage} />
       </Switch>
     </div>
   );
