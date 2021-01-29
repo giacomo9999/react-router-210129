@@ -1,15 +1,9 @@
-import { Link, Route } from "react-router-dom";
-import Fruit from "./Fruit";
+import { Link } from "react-router-dom";
 
 const FruitsList = (props) => {
-  //   console.log("Fruits List Props: ", props);
-  const fruitsData = [
-    { id: 1, name: "Apple", color: "red" },
-    { id: 2, name: "Banana", color: "yellow" },
-    { id: 3, name: "Orange", color: "orange" },
-  ];
+  console.log("Fruits List Props: ", props);
 
-  const fruitLinks = fruitsData.map((fruit) => (
+  const fruitLinks = props.fruitsData.map((fruit) => (
     <li key={fruit.id}>
       <Link to={props.match.url + "/" + fruit.id}>{fruit.name}</Link>
     </li>
