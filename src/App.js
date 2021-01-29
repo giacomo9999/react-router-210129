@@ -1,6 +1,7 @@
 import { Link, Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import FruitsList from "./FruitsList";
+import Fruit from "./Fruit";
 import UsersList from "./UsersList";
 import NoMatchPage from "./NoMatchPage";
 
@@ -24,6 +25,12 @@ function App() {
       </header>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route
+          exact path="/fruits-list/:fruitId"
+          render={(props) => (
+            <Fruit {...props} name="Fruit_name" color="Fruit_color" />
+          )}
+        />
         <Route path="/fruits-list" component={FruitsList} />
         <Route path="/users-list" component={UsersList} />
         <Route component={NoMatchPage} />
